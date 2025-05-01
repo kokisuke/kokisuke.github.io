@@ -4,8 +4,7 @@ function setLanguage(lang) {
   });
 }
 
-// Optional: Animate on scroll
-const sections = document.querySelectorAll('[data-section]');
+// アニメーション：スクロール時フェードイン
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -14,7 +13,7 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.2 });
 
-sections.forEach(sec => {
-  sec.classList.remove('fade-in'); // 初期化
-  observer.observe(sec);
+document.querySelectorAll('[data-section]').forEach(el => {
+  el.classList.remove('fade-in'); // 初期化
+  observer.observe(el);
 });
