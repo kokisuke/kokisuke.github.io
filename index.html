@@ -1,71 +1,53 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ポートフォリオ - kinokoko</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-
-  <!-- ヒーロー -->
-  <section class="hero">
-    <div class="hero-content fade-in">
-      <h1>やあ！<br><span class="highlight">きのここ</span>です</h1>
-      <p>あなたのブラウザに、元気とアイデアを。</p>
-    </div>
-  </section>
-
-  <!-- プロフィール -->
-  <section class="section profile fade-in">
-    <h2>プロフィール</h2>
-    <div class="profile-content">
-      <img src="images/profile.jpg" alt="プロフィール写真" class="profile-img" />
-      <div class="profile-text">
-        <p>
-          ポップでわかりやすいWebを目指して、HTML・CSS・JavaScriptを使って楽しく制作中！<br>
-          面白いサイトを作りたいです
-        </p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ポートフォリオサイト</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">MyPortfolio</div>
+      <div class="nav-links">
+        <a href="#home">ホーム</a>
+        <a href="#about">自己紹介</a>
+        <a href="#works">作品</a>
+        <a href="#portfolio">ポートフォリオ</a>
       </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- 最新の作品 -->
-  <section class="section works fade-in">
-    <h2>最新の作品</h2>
-    <div class="portfolio-grid">
-      <div class="card pink">
-        <h3>ポートフォリオサイト</h3>
-        <p>HTML/CSSでつくった、シンプルなWeb名刺。</p>
+    <section id="home" class="section">
+      <h1>ようこそ！</h1>
+      <div class="card-grid">
+        <div class="card">
+          <h2>自己紹介</h2>
+          <p>私の経歴や趣味、背景についてご紹介します。</p>
+        </div>
+        <div class="card">
+          <h2>作品</h2>
+          <p>最新の作品や実験的なプロジェクトを紹介します。</p>
+        </div>
+        <div class="card">
+          <h2>ポートフォリオ</h2>
+          <p>選りすぐりの制作物とその詳細を掲載しています。</p>
+        </div>
       </div>
-      <div class="card blue">
-        <h3>ToDoアプリ</h3>
-        <p>やることを管理！JavaScriptで制作。</p>
-      </div>
-      <div class="card green">
-        <h3>経営分析レポート</h3>
-        <p>実在企業を分析した大学の課題。</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ポートフォリオ -->
-  <section class="section portfolio fade-in">
-    <h2>ポートフォリオ</h2>
-    <p>GitHubで他の作品も見てね！</p>
-    <a class="portfolio-link" href="https://github.com/yourusername" target="_blank">GitHubを開く</a>
-  </section>
+    <section id="about" class="section">
+      <h1>自己紹介</h1>
+      <p>名古屋市在住のクリエイターです。経歴、スキル、趣味などをご紹介します。</p>
+    </section>
 
-  <!-- 連絡先 -->
-  <section class="section contact fade-in">
-    <h2>連絡先</h2>
-    <p>Email: </p>
-  </section>
+    <section id="works" class="section">
+      <h1>作品</h1>
+      <p>ここでは最新の作品や、試作的なデザイン・開発の成果を紹介します。</p>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 kokinoko</p>
-  </footer>
-
-</body>
+    <section id="portfolio" class="section">
+      <h1>ポートフォリオ</h1>
+      <p>本格的に取り組んだプロジェクトや、代表的な成果物をまとめています。</p>
+    </section>
+  </body>
 </html>
