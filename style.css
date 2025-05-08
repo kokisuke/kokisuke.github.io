@@ -16,10 +16,11 @@ header {
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 1em;
 }
 
@@ -27,6 +28,24 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+}
+
+.banner {
+    background-image: url('path/to/your/image.jpg'); /* クリスタルカラーの背景画像 */
+    background-size: cover;
+    background-position: center;
+    padding: 5em 0;
+    text-align: center;
+}
+
+.banner h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.banner p {
+    font-size: 1.5em;
+    margin: 0.5em 0 0;
 }
 
 section {
