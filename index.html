@@ -1,129 +1,44 @@
 <!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ポートフォリオサイト</title>
-    <link rel="stylesheet" href="style.css" />
-    <style>
-      /* スクロール時フェードイン */
-      .fade-in {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.8s ease, transform 0.8s ease;
-      }
-      .fade-in.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | MyPortfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="neon-widget"></div>
+  <nav class="navbar fade-in">
+    <div class="logo">MyPortfolio</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="profile.html">Profile</a>
+      <a href="hobby.html">Hobby</a>
+      <a href="portfolio.html">Portfolio</a>
+    </div>
+  </nav>
 
-      /* ネオン背景ウィジェット */
-      body {
-        position: relative;
-        background: #fff;
-      }
-      .neon-widget {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: -1;
-        background: radial-gradient(circle at 30% 30%, rgba(0, 255, 255, 0.2), transparent 60%),
-                    radial-gradient(circle at 70% 70%, rgba(255, 0, 255, 0.2), transparent 60%);
-        animation: pulse 10s infinite alternate;
-      }
-      @keyframes pulse {
-        0% {
-          filter: blur(20px);
-        }
-        100% {
-          filter: blur(40px);
-        }
-      }
-
-      /* 波紋エフェクト */
-      .nav-links a {
-        position: relative;
-        overflow: hidden;
-      }
-      .nav-links a::after {
-        content: "";
-        position: absolute;
-        width: 300%;
-        height: 300%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(0);
-        background: rgba(0, 255, 255, 0.3);
-        border-radius: 50%;
-        transition: transform 0.5s ease;
-        z-index: -1;
-      }
-      .nav-links a:hover::after {
-        transform: translate(-50%, -50%) scale(1);
-      }
-    </style>
-    <script>
-      // Intersection Observer for scroll animations
-      document.addEventListener("DOMContentLoaded", () => {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-      });
-    </script>
-  </head>
-  <body>
-    <div class="neon-widget"></div>
-    <nav class="navbar fade-in">
-      <div class="logo">MyPortfolio</div>
-      <div class="nav-links">
-        <a href="#home">ホーム</a>
-        <a href="#about">自己紹介</a>
-        <a href="#hobby">趣味</a>
-        <a href="#portfolio">ポートフォリオ</a>
+  <section class="section fade-in">
+    <h1>Welcome!</h1>
+    <div class="card-grid">
+      <div class="card fade-in">
+        <h2>Profile</h2>
+        <p>About my background, education, and more.</p>
+        <a class="button" href="profile.html">Go to Profile</a>
       </div>
-    </nav>
-
-    <section id="home" class="section fade-in">
-      <h1>ようこそ！</h1>
-      <div class="card-grid">
-        <div class="card fade-in">
-          <h2>自己紹介</h2>
-          <p>私の経歴や趣味、背景についてご紹介します。</p>
-        </div>
-        <div class="card fade-in">
-          <h2>趣味</h2>
-          <p>ゲーム、読書、旅行など、私の好きなことを紹介します。</p>
-        </div>
-        <div class="card fade-in">
-          <h2>ポートフォリオ</h2>
-          <p>選りすぐりの制作物とその詳細を掲載しています。</p>
-        </div>
+      <div class="card fade-in">
+        <h2>Hobby</h2>
+        <p>Things I enjoy like gaming, reading, and travel.</p>
+        <a class="button" href="hobby.html">Go to Hobby</a>
       </div>
-    </section>
+      <div class="card fade-in">
+        <h2>Portfolio</h2>
+        <p>Some of the works and projects I've created.</p>
+        <a class="button" href="portfolio.html">Go to Portfolio</a>
+      </div>
+    </div>
+  </section>
 
-    <section id="about" class="section fade-in">
-      <h1>自己紹介</h1>
-      <p>名古屋市在住のクリエイターです。経歴、スキル、趣味などをご紹介します。</p>
-    </section>
-
-    <section id="hobby" class="section fade-in">
-      <h1>趣味</h1>
-      <p>ここでは私の趣味、例えばゲーム、アニメ、ガジェット収集などを紹介します。</p>
-    </section>
-
-    <section id="portfolio" class="section fade-in">
-      <h1>ポートフォリオ</h1>
-      <p>本格的に取り組んだプロジェクトや、代表的な成果物をまとめています。</p>
-    </section>
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>
