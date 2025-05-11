@@ -1,51 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Koki's Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="neon-widget"></div>
-  <nav class="navbar fade-in">
-    <div class="logo">Koki's Portfolio</div>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="profile.html" class="nav-link">Profile</a>
-      <a href="hobby.html" class="nav-link">Hobby</a>
-      <a href="portfolio.html" class="nav-link">Portfolio</a>
-    </div>
-    <div class="hamburger" id="hamburger">&#9776;</div>
-    <div class="language-switcher">
-      <select id="languageSelect">
-        <option value="en">EN</option>
-        <option value="ja">JA</option>
-      </select>
-    </div>
-  </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Koki's Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="neon-widget"></div>
+    <header class="navbar">
+      <div class="logo">Koki's Portfolio</div>
+      <div id="hamburger" class="hamburger">&#9776;</div>
+      <nav id="navLinks" class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <a href="hobby.html">Hobby</a>
+        <a href="portfolio.html">Portfolio</a>
+      </nav>
+    </header>
 
-  <section class="section fade-in">
-    <h1 data-en="Welcome!" data-ja="ようこそ！">Welcome!</h1>
-    <div class="card-grid">
-      <div class="card fade-in">
-        <h2 data-en="Profile" data-ja="プロフィール">Profile</h2>
-        <p data-en="About my background, education, and more." data-ja="私の経歴、教育などについて。">About my background, education, and more.</p>
-        <a class="button nav-link" href="profile.html" data-en="Go to Profile" data-ja="プロフィールへ">Go to Profile</a>
+    <section class="section fade-in">
+      <h1>Welcome!</h1>
+      <div class="card-grid">
+        <div class="card fade-in">
+          <h2>Profile</h2>
+          <p>Learn about my background, skills, and experience.</p>
+          <a href="profile.html" class="button">View Profile</a>
+        </div>
+        <div class="card fade-in">
+          <h2>Hobby</h2>
+          <p>Discover my hobbies like gaming, reading, and traveling.</p>
+          <a href="hobby.html" class="button">View Hobbies</a>
+        </div>
+        <div class="card fade-in">
+          <h2>Portfolio</h2>
+          <p>See my featured works and project achievements.</p>
+          <a href="portfolio.html" class="button">View Portfolio</a>
+        </div>
       </div>
-      <div class="card fade-in">
-        <h2 data-en="Hobby" data-ja="趣味">Hobby</h2>
-        <p data-en="Things I enjoy like gaming, reading, and travel." data-ja="ゲーム、読書、旅行など、私が楽しんでいること。">Things I enjoy like gaming, reading, and travel.</p>
-        <a class="button nav-link" href="hobby.html" data-en="Go to Hobby" data-ja="趣味へ">Go to Hobby</a>
-      </div>
-      <div class="card fade-in">
-        <h2 data-en="Portfolio" data-ja="ポートフォリオ">Portfolio</h2>
-        <p data-en="Some of the works and projects I've created." data-ja="私が作成した作品やプロジェクトの一部。">Some of the works and projects I've created.</p>
-        <a class="button nav-link" href="portfolio.html" data-en="Go to Portfolio" data-ja="ポートフォリオへ">Go to Portfolio</a>
-      </div>
-    </div>
-  </section>
-
-  <script src="script.js"></script>
-</body>
+    </section>
+  </body>
 </html>
