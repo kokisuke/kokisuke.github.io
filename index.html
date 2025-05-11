@@ -6,25 +6,83 @@
     <title>ポートフォリオサイト</title>
     <link rel="stylesheet" href="style.css" />
     <style>
+      /* スクロール時フェードイン */
       .fade-in {
         opacity: 0;
         transform: translateY(20px);
-        animation: fadeInUp 0.8s ease forwards;
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
       }
 
-      .fade-in.delay-1 { animation-delay: 0.2s; }
-      .fade-in.delay-2 { animation-delay: 0.4s; }
-      .fade-in.delay-3 { animation-delay: 0.6s; }
-
-      @keyframes fadeInUp {
-        to {
-          opacity: 1;
-          transform: translateY(0);
+      /* ネオン背景ウィジェット */
+      body {
+        position: relative;
+        background: #fff;
+      }
+      .neon-widget {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+        background: radial-gradient(circle at 30% 30%, rgba(0, 255, 255, 0.2), transparent 60%),
+                    radial-gradient(circle at 70% 70%, rgba(255, 0, 255, 0.2), transparent 60%);
+        animation: pulse 10s infinite alternate;
+      }
+      @keyframes pulse {
+        0% {
+          filter: blur(20px);
+        }
+        100% {
+          filter: blur(40px);
         }
       }
+
+      /* 波紋エフェクト */
+      .nav-links a {
+        position: relative;
+        overflow: hidden;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        width: 300%;
+        height: 300%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        background: rgba(0, 255, 255, 0.3);
+        border-radius: 50%;
+        transition: transform 0.5s ease;
+        z-index: -1;
+      }
+      .nav-links a:hover::after {
+        transform: translate(-50%, -50%) scale(1);
+      }
     </style>
+    <script>
+      // Intersection Observer for scroll animations
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+      });
+    </script>
   </head>
   <body>
+    <div class="neon-widget"></div>
     <nav class="navbar fade-in">
       <div class="logo">MyPortfolio</div>
       <div class="nav-links">
@@ -35,35 +93,35 @@
       </div>
     </nav>
 
-    <section id="home" class="section fade-in delay-1">
+    <section id="home" class="section fade-in">
       <h1>ようこそ！</h1>
       <div class="card-grid">
-        <div class="card fade-in delay-1">
+        <div class="card fade-in">
           <h2>自己紹介</h2>
           <p>私の経歴や趣味、背景についてご紹介します。</p>
         </div>
-        <div class="card fade-in delay-2">
+        <div class="card fade-in">
           <h2>趣味</h2>
           <p>ゲーム、読書、旅行など、私の好きなことを紹介します。</p>
         </div>
-        <div class="card fade-in delay-3">
+        <div class="card fade-in">
           <h2>ポートフォリオ</h2>
           <p>選りすぐりの制作物とその詳細を掲載しています。</p>
         </div>
       </div>
     </section>
 
-    <section id="about" class="section fade-in delay-1">
+    <section id="about" class="section fade-in">
       <h1>自己紹介</h1>
       <p>名古屋市在住のクリエイターです。経歴、スキル、趣味などをご紹介します。</p>
     </section>
 
-    <section id="hobby" class="section fade-in delay-1">
+    <section id="hobby" class="section fade-in">
       <h1>趣味</h1>
       <p>ここでは私の趣味、例えばゲーム、アニメ、ガジェット収集などを紹介します。</p>
     </section>
 
-    <section id="portfolio" class="section fade-in delay-1">
+    <section id="portfolio" class="section fade-in">
       <h1>ポートフォリオ</h1>
       <p>本格的に取り組んだプロジェクトや、代表的な成果物をまとめています。</p>
     </section>
