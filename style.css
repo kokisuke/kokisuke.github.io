@@ -1,3 +1,4 @@
+/* 基本スタイル */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
@@ -6,6 +7,7 @@ body {
   color: #222;
 }
 
+/* ナビゲーションバー */
 .navbar {
   background-color: #fff;
   color: #00caff;
@@ -20,8 +22,17 @@ body {
   z-index: 1000;
 }
 
-.nav-links a {
-  margin-left: 1rem;
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
   text-decoration: none;
   font-weight: bold;
   position: relative;
@@ -34,18 +45,18 @@ body {
   box-shadow: 0 4px 6px rgba(0, 255, 255, 0.15);
 }
 
-.nav-links a:hover {
+.nav-link:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 20px rgba(0, 255, 255, 0.4);
   background-color: #e0faff;
 }
 
-.nav-links a:active {
+.nav-link:active {
   transform: scale(0.96);
   box-shadow: 0 4px 8px rgba(0, 255, 255, 0.2);
 }
 
-.nav-links a::after {
+.nav-link::after {
   content: "";
   position: absolute;
   width: 300%;
@@ -59,10 +70,31 @@ body {
   z-index: -1;
 }
 
-.nav-links a:hover::after {
+.nav-link:hover::after {
   transform: translate(-50%, -50%) scale(1);
 }
 
+/* ハンバーガーメニュー */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* 言語切り替えセレクター */
+.language-switcher {
+  margin-left: 1rem;
+}
+
+.language-switcher select {
+  padding: 0.3rem;
+  border-radius: 4px;
+  border: 1px solid #00caff;
+  background-color: #fff;
+  color: #00caff;
+}
+
+/* セクション */
 .section {
   padding: 3rem 2rem;
   border-bottom: 1px solid #eee;
@@ -129,7 +161,30 @@ body {
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
+
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* レスポンシブデザイン */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
 }
