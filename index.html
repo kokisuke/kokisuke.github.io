@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Koki's Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="script.js"></script>
-  </head>
-  <body>
-    <div class="neon-widget"></div>
-    <header class="navbar">
-      <div class="logo">Koki's Portfolio</div>
-      <div id="hamburger" class="hamburger">&#9776;</div>
-      <nav id="navLinks" class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="profile.html">Profile</a>
-        <a href="hobby.html">Hobby</a>
-        <a href="portfolio.html">Portfolio</a>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Koki's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="neon-widget"></div>
+  <nav class="navbar fade-in">
+    <div class="logo">Koki's Portfolio</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="profile.html">Profile</a>
+      <a href="hobby.html">Hobby</a>
+      <a href="portfolio.html">Portfolio</a>
+    </div>
+  </nav>
 
-    <section class="section fade-in">
-      <h1>Welcome!</h1>
-      <div class="card-grid">
-        <div class="card fade-in">
-          <h2>Profile</h2>
-          <p>Learn about my background, skills, and experience.</p>
-          <a href="profile.html" class="button">View Profile</a>
-        </div>
-        <div class="card fade-in">
-          <h2>Hobby</h2>
-          <p>Discover my hobbies like gaming, reading, and traveling.</p>
-          <a href="hobby.html" class="button">View Hobbies</a>
-        </div>
-        <div class="card fade-in">
-          <h2>Portfolio</h2>
-          <p>See my featured works and project achievements.</p>
-          <a href="portfolio.html" class="button">View Portfolio</a>
-        </div>
+  <section class="section fade-in">
+    <h1>Welcome!</h1>
+    <div class="card-grid">
+      <div class="card fade-in">
+        <h2>Profile</h2>
+        <p>Learn about my background, experience, and journey.</p>
+        <a href="profile.html" class="button">View Profile</a>
       </div>
-    </section>
-  </body>
+      <div class="card fade-in">
+        <h2>Hobby</h2>
+        <p>Discover my hobbies like games, reading, and travel.</p>
+        <a href="hobby.html" class="button">See Hobbies</a>
+      </div>
+      <div class="card fade-in">
+        <h2>Portfolio</h2>
+        <p>Explore selected works and achievements.</p>
+        <a href="portfolio.html" class="button">See Portfolio</a>
+      </div>
+    </div>
+  </section>
+  <script src="script.js"></script>
+</body>
 </html>
