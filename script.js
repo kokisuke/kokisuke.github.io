@@ -1,6 +1,6 @@
+// スクロール時にフェードイン
 document.addEventListener("DOMContentLoaded", () => {
-  // スクロール時のフェードイン
-  const observer = new IntersectionObserver((entries) => {
+  const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
@@ -10,15 +10,24 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+});
 
-  // ハンバーガーメニューの開閉
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("navLinks");
-
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+// 波紋クリックエフェクト
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const circle = document.createElement('span');
+      circle.classList.add('ripple');
+      const rect = link.getBoundingClientRect();
+      circle.style.left = `${e.clientX - rect.left}px`;
+      circle.style.top = `${e.clientY - rect.top}px`;
+      link.appendChild(circle);
+      setTimeout(() => circle.remove(), 600);
+    });
   });
+});
 
-  // 言語切り替え機能
-::contentReference[oaicite:0]{index=0}
- 
+// ハンバーガーメニュー切り替え
+function toggleMenu() {
+  document.querySelector('.nav-links').classList.toggle('open');
+}
