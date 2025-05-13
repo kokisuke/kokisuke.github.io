@@ -1,28 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Profile - Koki's Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="neon-widget"></div>
-  <nav class="navbar fade-in">
+  <nav class="navbar">
     <div class="logo">Koki's Portfolio</div>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="profile.html">Profile</a>
       <a href="hobby.html">Hobby</a>
       <a href="portfolio.html">Portfolio</a>
     </div>
+    <div class="language-switch">
+      <button onclick="setLanguage('ja')">日本語</button>
+      <button onclick="setLanguage('en')">English</button>
+    </div>
   </nav>
 
-  <section class="section fade-in">
-    <h1>Profile</h1>
-    <p>I’m a creator based in Nagoya. Learn about my background, skills, and interests.</p>
+  <section class="section">
+    <h1 data-en="Profile" data-ja="プロフィール">プロフィール</h1>
+    
+    <div class="profile-container">
+      <img src="images/profile.jpg" alt="プロフィール画像" class="profile-photo" />
+      <div class="profile-text">
+        <p data-en="Hello! I'm Koki. I live in Nagoya and love design, technology, and creation." 
+           data-ja="こんにちは！Kokiです。名古屋に住んでおり、デザインやテクノロジー、ものづくりが大好きです。">
+          こんにちは！Kokiです。名古屋に住んでおり、デザインやテクノロジー、ものづくりが大好きです。
+        </p>
+      </div>
+    </div>
   </section>
-  <script src="script.js"></script>
 </body>
 </html>
