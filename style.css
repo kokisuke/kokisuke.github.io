@@ -192,22 +192,37 @@ a {
   }
 
   .language-switch {
-    margin-left: auto;
-    display: flex;
-    gap: 8px;
+  margin-top: 0.5rem;
+  justify-content: center;
+  width: 100%;
   }
-  .language-switch button {
-    padding: 4px 10px;
-    background: #00ffff;
-    border: none;
-    border-radius: 4px;
-    color: #000;
-    cursor: pointer;
-    transition: background 0.3s;
+
+.language-switch button {
+  width: 100px;
+  text-align: center;
   }
-  .language-switch button:hover {
-    background: #00cccc;
-  }
+}
+
+/* 言語切り替えボタン（共通） */
+.language-switch {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.language-switch button {
+  padding: 5px 10px;
+  background: #e0f7f7;
+  border: 1px solid #00cccc;
+  border-radius: 4px;
+  color: #006666;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.language-switch button:hover {
+  background: #ccf0f0;
 }
 
 /* プロフィール */
