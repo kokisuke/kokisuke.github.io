@@ -188,4 +188,23 @@ a {
   .hamburger {
     display: block;
   }
+
+  .language-switch {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+　}
+.language-switch button {
+  padding: 4px 10px;
+  background: #00ffff;
+  border: none;
+  border-radius: 4px;
+  color: #000;
+  cursor: pointer;
+  transition: background 0.3s;
+　}
+.language-switch button:hover {
+  background: #00cccc;
+　}
 }
+
