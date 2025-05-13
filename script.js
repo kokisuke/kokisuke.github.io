@@ -31,3 +31,20 @@ document.addEventListener("DOMContentLoaded", () => {
 function toggleMenu() {
   document.querySelector('.nav-links').classList.toggle('open');
 }
+
+function setLanguage(lang) {
+  localStorage.setItem('language', lang);
+  updateLanguage(lang);
+}
+
+function updateLanguage(lang) {
+  document.querySelectorAll('[data-en]').forEach(el => {
+    el.textContent = el.dataset[lang];
+  });
+}
+
+// ページ読み込み時に保存された言語で表示
+document.addEventListener('DOMContentLoaded', () => {
+  const savedLang = localStorage.getItem('language') || 'en';
+  updateLanguage(savedLang);
+});
