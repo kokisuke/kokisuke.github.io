@@ -210,6 +210,7 @@ a {
   }
 }
 
+/* プロフィール */
 .profile-container {
   display: flex;
   flex-direction: column;
@@ -242,4 +243,23 @@ a {
 .card ul li {
   margin-bottom: 0.5rem;
   line-height: 1.5;
+}
+
+.profile-photo-large {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+.profile-photo-large:hover {
+  transform: scale(1.05);
+}
+
+.profile-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  text-align: center;
 }
