@@ -54,14 +54,12 @@ a {
   box-shadow: 0 4px 6px rgba(0, 255, 255, 0.1);
 }
 
+/* ロゴ */
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #00ffff; /* 明るいシアン（ネオンカラー） */
-  text-shadow:
-    0 0 5px #00ffff,
-    0 0 10px #00ffff,
-    0 0 15px #00cccc;
+  color: #0a0a0a; /* ← より濃い黒系の色に変更 */
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.4); /* ネオンっぽさ維持 */
 }
 
 .nav-links {
