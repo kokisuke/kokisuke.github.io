@@ -225,6 +225,7 @@ a {
 }
 
 /* レスポンシブ対応 */
+/* ハンバーガーとナビ表示切替 */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -248,13 +249,23 @@ a {
   }
 
   .language-switch {
-    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
     justify-content: center;
-    width: 100%;
+    margin-top: 0.5rem;
   }
 
   .language-switch button {
-    width: 100px;
-    text-align: center;
+    padding: 5px 10px;
+    background: #00cccc;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .language-switch button:hover {
+    background: #0099aa;
   }
 }
