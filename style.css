@@ -147,11 +147,13 @@ a {
 }
 
 /* カード */
+/* ====== B. Flexboxレイアウトでカード整列 ====== */
 .card-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
   justify-content: center;
+  gap: 2rem;
+  align-items: stretch; /* 行ごとに高さをそろえる */
 }
 
 .card {
@@ -159,14 +161,24 @@ a {
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 255, 255, 0.2);
-  flex: 1 1 250px;
+  flex: 1 1 300px; /* 各カードの幅を自動調整 */
   max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 24px rgba(0, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .card h2 {
