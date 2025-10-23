@@ -147,7 +147,6 @@ a {
 }
 
 /* カード */
-/* ====== B. Flexboxレイアウトでカード整列 ====== */
 .card-grid {
   display: flex;
   flex-wrap: wrap;
@@ -161,11 +160,8 @@ a {
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 255, 255, 0.2);
-  flex: 1 1 300px; /* 各カードの幅を自動調整 */
+  flex: 1 1 250px;
   max-width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
