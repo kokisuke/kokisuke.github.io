@@ -45,6 +45,6 @@ function updateLanguage(lang) {
 
 // ページ読み込み時に保存された言語で表示
 document.addEventListener('DOMContentLoaded', () => {
-  const savedLang = localStorage.getItem('language') || 'en';
+  const savedLang = localStorage.getItem('language') || 'ja';
   updateLanguage(savedLang);
 });

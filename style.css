@@ -18,6 +18,13 @@ a {
   margin: auto;
 }
 
+/* Portfolio専用のセクション */
+.portfolio-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
 /* ネオン背景 */
 .neon-widget {
   position: fixed;
@@ -155,6 +162,37 @@ a {
   align-items: stretch; /* 行ごとに高さをそろえる */
 }
 
+/* Portfolio専用のカードグリッド */
+.portfolio-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: start;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* デスクトップでは3列固定 */
+@media (min-width: 1024px) {
+  .portfolio-card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* タブレットでは2列 */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .portfolio-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* モバイルでは1列 */
+@media (max-width: 767px) {
+  .portfolio-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .card {
   background: #f8f8f8;
   padding: 2rem;
@@ -238,6 +276,36 @@ a {
 .card ul li {
   margin-bottom: 0.5rem;
   line-height: 1.5;
+}
+
+/* Portfolio専用のカード設定 */
+.portfolio-card-grid .card {
+  display: flex !important;
+  flex-direction: column;
+  height: 100%;
+  min-height: 280px;
+  flex: none !important; /* flexの値をリセット */
+  max-width: none !important; /* max-widthをリセット */
+  width: 100% !important; /* 親グリッドに合わせる */
+  box-sizing: border-box;
+}
+
+.portfolio-card-grid .card h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+
+.portfolio-card-grid .card p {
+  flex-grow: 1;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.portfolio-card-grid .card .button {
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 /* レスポンシブ対応 */
